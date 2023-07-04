@@ -29,7 +29,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# auth모델에 shortener.Users 쓰겠다 명시. 유저테이블을 상속받으면서 유저테이블이 쓸모가 없어짐. 인증을 위해 어떤 데이터 테이블을 쓸건지 정해야 한다.
+AUTH_USER_MODEL = "shortener.Users"
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shortener.apps.ShortenerConfig'
 ]
 
 MIDDLEWARE = [
